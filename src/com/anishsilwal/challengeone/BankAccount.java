@@ -8,11 +8,11 @@ public class BankAccount {
     private String customerPhone;
 
     public BankAccount() {
-        this("Default Name", "Default Email", "Default Phone","0000000", 0);
+        this("Default Name", "Default Email", "Default Phone","0000000", 0.0d);
     }
 
     public BankAccount(String customerName, String customerEmail, String customerPhone) {
-        this(customerName, customerEmail, customerPhone, "0000000", 0);
+        this(customerName, customerEmail, customerPhone, "0000000", 0.0d);
     }
 
     public BankAccount(String customerName, String customerEmail, String customerPhone, String accountNumber, double balance) {
@@ -34,7 +34,7 @@ public class BankAccount {
     }
 
     public boolean deposit(double amount) {
-        if(amount >= 0) {
+        if(amount >= 0.0d) {
             this.balance += amount;
             return true;
         }
@@ -42,7 +42,7 @@ public class BankAccount {
     }
 
     public boolean withdraw(double amount) {
-        if(amount >= 0 && this.balance >= amount) {
+        if(amount >= 0.0d && this.balance >= amount) {
             this.balance -= amount;
             return true;
         }

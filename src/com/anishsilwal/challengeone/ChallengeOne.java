@@ -36,7 +36,6 @@ public class ChallengeOne {
 
     public static void run () {
         BankAccount ramAccount = new BankAccount();
-
         ramAccount.setCustomerName("Ram");
         ramAccount.setCustomerEmail("ram@domain.com");
         ramAccount.setCustomerPhone("9812321232");
@@ -53,6 +52,15 @@ public class ChallengeOne {
         withdraw(ramAccount, 500);
         deposit(samAccount, -100);
         withdraw(samAccount, -200);
+
+        VipAccount defaultVipAcc = new VipAccount();
+        VipAccount hariAcc = new VipAccount("Hari", 2000.0d);
+        VipAccount sitaAcc = new VipAccount("Sita", 50000.0d, "sita@domain.com");
+
+        defaultVipAcc.showDetails();
+        hariAcc.showDetails();
+        sitaAcc.showDetails();
+
     }
 
 }
