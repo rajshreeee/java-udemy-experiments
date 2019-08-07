@@ -4,6 +4,7 @@ public class ChallengeOne {
 
     public static void deposit(BankAccount account, double amount) {
         System.out.println("--------------------------------------------------------------");
+        System.out.println("Account Number: " + account.getAccountNumber());
         if(account.deposit(amount)){
             System.out.println("Deposited Amount: Rs. " + amount);
         }else{
@@ -16,6 +17,7 @@ public class ChallengeOne {
 
     public static void withdraw(BankAccount account, double amount){
         System.out.println("--------------------------------------------------------------");
+        System.out.println("Account Number: " + account.getAccountNumber());
         if(account.withdraw(amount)){
             System.out.println("Amount Withdrawn: " + amount);
         }else{
@@ -33,21 +35,24 @@ public class ChallengeOne {
     }
 
     public static void run () {
-        BankAccount account = new BankAccount();
+        BankAccount ramAccount = new BankAccount();
 
-        account.setCustomerName("Ram");
-        account.setCustomerEmail("ram@domain.com");
-        account.setCustomerPhone("9812321232");
-        account.setAccountNumber(200);
-        account.setBalance(400);
+        ramAccount.setCustomerName("Ram");
+        ramAccount.setCustomerEmail("ram@domain.com");
+        ramAccount.setCustomerPhone("9812321232");
+        ramAccount.setAccountNumber("223123");
+        ramAccount.setBalance(400);
 
-        account.showDetail();
+        BankAccount samAccount = new BankAccount("Sam", "sam@domain.com", "9812312311", "231232", 0);
 
-        withdraw(account, 500);
-        deposit(account, 200);
-        withdraw(account, 500);
-        deposit(account, -100);
-        withdraw(account, -200);
+        ramAccount.showDetail();
+        samAccount.showDetail();
+
+        withdraw(ramAccount, 500);
+        deposit(ramAccount, 200);
+        withdraw(ramAccount, 500);
+        deposit(samAccount, -100);
+        withdraw(samAccount, -200);
     }
 
 }

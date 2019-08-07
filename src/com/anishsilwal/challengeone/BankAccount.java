@@ -1,18 +1,36 @@
 package com.anishsilwal.challengeone;
 
 public class BankAccount {
-    private long accountNumber;
+    private String accountNumber;
     private double balance;
     private String customerName;
     private String customerEmail;
     private String customerPhone;
 
+    public BankAccount() {
+        this("Default Name", "Default Email", "Default Phone","0000000", 0);
+    }
+
+    public BankAccount(String customerName, String customerEmail, String customerPhone) {
+        this(customerName, customerEmail, customerPhone, "0000000", 0);
+    }
+
+    public BankAccount(String customerName, String customerEmail, String customerPhone, String accountNumber, double balance) {
+        this.accountNumber = accountNumber;
+        this.customerName = customerName;
+        this.customerEmail = customerEmail;
+        this.customerPhone = customerPhone;
+        this.balance = balance;
+    }
+
     public void showDetail() {
+        System.out.println("--------------------------------------------------------------");
         System.out.println("Customer Name: " + customerName);
         System.out.println("Customer Email: " + customerEmail);
         System.out.println("Customer Phone: " + customerPhone);
         System.out.println("Account Number: " + accountNumber);
         System.out.println("Account Balance: Rs." + balance);
+        System.out.println("--------------------------------------------------------------");
     }
 
     public boolean deposit(double amount) {
@@ -31,11 +49,11 @@ public class BankAccount {
         return false;
     }
 
-    public long getAccountNumber() {
+    public String getAccountNumber() {
         return accountNumber;
     }
 
-    public void setAccountNumber(long accountNumber) {
+    public void setAccountNumber(String accountNumber) {
         this.accountNumber = accountNumber;
     }
 
