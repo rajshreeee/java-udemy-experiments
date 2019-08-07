@@ -7,7 +7,7 @@ public class VipAccount {
     private String email;
 
     public VipAccount(){
-        this("Default Name", 10000.0d, "Default Email");
+        this("Default Name", 10000.0d);
     }
 
     public VipAccount(String name, double creditLimit) {
