@@ -1,4 +1,4 @@
-package com.anishsilwal.challengeone;
+package com.anishsilwal.constructors;
 
 public class BankAccount {
     private String accountNumber;

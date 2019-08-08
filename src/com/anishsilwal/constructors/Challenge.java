@@ -1,6 +1,6 @@
-package com.anishsilwal.challengeone;
+package com.anishsilwal.constructors;
 
-public class ChallengeOne {
+public class Challenge {
 
     public static void deposit(BankAccount account, double amount) {
         System.out.println("--------------------------------------------------------------");
