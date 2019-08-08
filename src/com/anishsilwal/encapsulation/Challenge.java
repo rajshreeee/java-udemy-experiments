@@ -3,7 +3,7 @@ package com.anishsilwal.encapsulation;
 public class Challenge {
 
     public static void run() {
-        Printer printer = new Printer("Laser Printer", true, 0, 10);
+        Printer printer = new Printer("Laser Printer", true, 10);
 
         if(!printer.print("Text")) {
             if (!printer.fillToner(100)) {

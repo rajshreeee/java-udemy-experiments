@@ -19,14 +19,18 @@ public class Printer {
     }
 
     public Printer(String model, boolean duplex) {
-        this(model, duplex, 0, MAX_TONER_LEVEL);
+        this(model, duplex, MAX_TONER_LEVEL);
     }
 
-    public Printer(String model, boolean duplex, int numPages, float tonerLevel) {
+    public Printer(String model, boolean duplex, float tonerLevel) {
         this.model = model;
         this.duplex = duplex;
-        this.numPages = numPages;
-        this.tonerLevel = tonerLevel;
+        if(tonerLevel < 0 || tonerLevel > 100) {
+            this.tonerLevel = 0;
+        }else{
+            this.tonerLevel = tonerLevel;
+        }
+        this.numPages = 0;
     }
 
     public boolean fillToner(float level) {
